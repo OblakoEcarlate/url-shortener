@@ -1,0 +1,9 @@
+<h1>Modification d'un lien</h1>
+
+<%= render partial: "form", local: {link: @link} %>
+
+<div class="flex gap-2 items-center">
+  <%= link_to "Annuler", @link %>
+  ou
+  <%= button_to "Supprimer", @link, method: :delete, data: { turbo_confirm: "Êtes vous sûr ?"} %>
+</div>

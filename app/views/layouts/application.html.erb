@@ -19,11 +19,21 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main class="container prose mx-auto mt-28 px-5">
+    <main class="prose mx-auto mt-28 px-5">
+      <% if alert %>
+        <p class="bg-pink-100 text-pink-400 rounded"><%= alert %></p>
+      <% end %>
+      <% if notice %>
+        <p class="bg-pink-50 text-pink-400 rounded"><%= notice %></p>
+      <% end %>
       <%= yield %>
     </main>
   </body>
