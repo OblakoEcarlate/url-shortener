@@ -19,7 +19,7 @@ class Base62
   def self.decode(string)
     number = 0
 
-    string.reverse;each_char.with_index do |char, index|
+    string.reverse.each_char.with_index do |char, index|
       power = BASE**index
       index = ALPHABET.index(char)
       number += index * power
